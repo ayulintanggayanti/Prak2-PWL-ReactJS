@@ -1,18 +1,29 @@
-import React from "react";
+import axios from "axios";
+import React, {useState, useEffect }from "react";
 
 const Message = () => {
+    const [messages, setMessages] = useState([]);
+
+    useEffect(() => {
+        axios.get("https://ayulintangapi.herokuapp.com/api/comment")
+        .then(res => {
+            console.log(res.data);
+            setMessages(res.data);
+        })
+        .catch(err => {
+            console.log(err);
+        })
+        
+    }, []);
+
     return (
         <div className="mt-10 px-5">
             <div classname="container justify-center flex">
-                <div class="w-full pt-5 text-gray-100">
-                    <h1 class="bg-gray-700 px-5 py-5 rounded-xl">Test Komentar 1</h1>
+                {messages.map(val => (
+                    <div className="w-full pt-5 text-gray-100">
+                    <h1 className="bg-gray-700 px-5 py-5 rounded-xl" id={val.id}>{val.message}</h1>
                 </div>
-                <div class="w-full pt-5 text-gray-100">
-                    <h1 class="bg-gray-700 px-5 py-5 rounded-xl">Test Komentar 2</h1>
-                </div>
-                <div class="w-full pt-5 text-gray-100">
-                    <h1 class="bg-gray-700 px-5 py-5 rounded-xl">Test Komentar 3</h1>
-                </div>
+            ))}
             </div>
         </div>
     );
