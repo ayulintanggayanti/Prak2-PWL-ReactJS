@@ -5,7 +5,7 @@ const Message = () => {
     const [messages, setMessages] = useState([]);
 
     useEffect(() => {
-        axios.get("https://ayulintangapi.herokuapp.com/api/comment")
+        axios.get("https://prak4-pwl-webservice-production.up.railway.app/api/comment")
         .then(res => {
             // console.log(res.data);
             setMessages(res.data);

@@ -19,7 +19,7 @@ const Contact = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post("https://ayulintangapi.herokuapp.com/api/comment", messages)
+        axios.post("https://prak4-pwl-webservice-production.up.railway.app/api/comment", messages)
             .then(res => {
                 refreshPage();
             }
