@@ -14,7 +14,7 @@ const Contact = () => {
         console.log(messages);
     }
     const refreshPage = () => {
-        window.location.reload(false);
+        window.location.reload();
     }
 
     const handleSubmit = (e) => {
