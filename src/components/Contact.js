@@ -13,15 +13,15 @@ const Contact = () => {
         setMessages(newMessage);
         console.log(messages);
     }
+    const refreshPage = () => {
+        window.location.reload(false);
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
         axios.post("https://ayulintangapi.herokuapp.com/api/comment", messages)
             .then(res => {
-                console.log(res);
-                setMessages({
-                    message: "",
-                });
+                refreshPage();
             }
             )
             .catch(err => {
