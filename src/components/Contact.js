@@ -22,11 +22,11 @@ const Contact = () => {
         axios.post("https://prak4-pwl-webservice-production.up.railway.app/api/comment", messages)
             .then(res => {
                 refreshPage();
-            }
-            )
+            })
             .catch(err => {
                 console.log(err);
             })
+            refreshPage();
     }
 
     return (
