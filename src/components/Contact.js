@@ -26,7 +26,6 @@ const Contact = () => {
             .catch(err => {
                 console.log(err);
             })
-            refreshPage();
     }
 
     return (
