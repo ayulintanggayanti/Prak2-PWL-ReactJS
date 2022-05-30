@@ -7,11 +7,11 @@ const Message = () => {
     useEffect(() => {
         axios.get("https://ayulintangapi.herokuapp.com/api/comment")
         .then(res => {
-            console.log(res.data);
+            // console.log(res.data);
             setMessages(res.data);
         })
         .catch(err => {
-            console.log(err);
+            console.log("error");
         })
         
     }, []);
